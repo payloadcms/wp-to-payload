@@ -1,0 +1,57 @@
+query {
+  Pages {
+    docs {
+      title
+      content
+      hero {
+        content
+        background {
+          url
+        }
+      }
+		}
+	}
+  Posts {
+    docs {
+      title
+      content
+      hero {
+        content
+        background {
+          url
+        }
+      }
+		}
+  }
+  CustomPosts {
+    docs {
+      title
+		}
+  }
+  allMedia {
+    docs {
+      url
+    }
+  }
+  Header {
+    items {
+      type
+      label
+      link {
+        type
+        url
+        reference {
+       		relationTo
+          value {
+            ...on Page {
+              title
+            }
+            ...on Post {
+              title
+            }
+          }
+        }
+			}
+    }
+  }
+}

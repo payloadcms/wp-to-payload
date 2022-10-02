@@ -1,0 +1,37 @@
+version: '2'
+
+services:
+  db:
+    platform: linux/x86_64
+    image: mysql:5.7
+    volumes:
+     - ./.database:/var/lib/mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - 8000:80
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+    volumes:
+      - ./:/var/www/html
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8181:80
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      MYSQL_USERNAME: root
+      MYSQL_ROOT_PASSWORD: password

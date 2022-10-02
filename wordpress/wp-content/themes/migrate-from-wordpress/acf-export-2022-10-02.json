@@ -1,0 +1,532 @@
+[
+    {
+        "key": "group_6339af459ebe9",
+        "title": "Custom Posts",
+        "fields": [
+            {
+                "key": "field_6339b6876f94e",
+                "label": "Custom Field",
+                "name": "custom_field",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "show_in_graphql": 1,
+                "default_value": "",
+                "maxlength": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": ""
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "custom-posts"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": [
+            "permalink",
+            "the_content",
+            "excerpt",
+            "discussion",
+            "comments",
+            "revisions",
+            "slug",
+            "author",
+            "format",
+            "page_attributes",
+            "featured_image",
+            "categories",
+            "tags",
+            "send-trackbacks"
+        ],
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "show_in_graphql": 1,
+        "graphql_field_name": "customPostsACF",
+        "map_graphql_types_from_location_rules": 0,
+        "graphql_types": ""
+    },
+    {
+        "key": "group_6339ad3aad4f9",
+        "title": "Header",
+        "fields": [
+            {
+                "key": "field_6339ad3a3c80c",
+                "label": "Menu Items",
+                "name": "items",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "show_in_graphql": 1,
+                "layout": "block",
+                "pagination": 0,
+                "min": 0,
+                "max": 0,
+                "collapsed": "",
+                "button_label": "Add Row",
+                "rows_per_page": 20,
+                "sub_fields": [
+                    {
+                        "key": "field_6339ad673c80d",
+                        "label": "Type",
+                        "name": "type",
+                        "type": "radio",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "show_in_graphql": 1,
+                        "choices": {
+                            "link": "Link",
+                            "subMenu": "Sub Menu"
+                        },
+                        "default_value": "",
+                        "return_format": "value",
+                        "allow_null": 0,
+                        "other_choice": 0,
+                        "layout": "horizontal",
+                        "save_other_choice": 0,
+                        "parent_repeater": "field_6339ad3a3c80c"
+                    },
+                    {
+                        "key": "field_6339add93c810",
+                        "label": "Label",
+                        "name": "label",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "show_in_graphql": 1,
+                        "default_value": "",
+                        "maxlength": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "parent_repeater": "field_6339ad3a3c80c"
+                    },
+                    {
+                        "key": "field_6339ad933c80e",
+                        "label": "Link",
+                        "name": "link",
+                        "type": "group",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_6339ad673c80d",
+                                    "operator": "==",
+                                    "value": "link"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "show_in_graphql": 1,
+                        "layout": "block",
+                        "sub_fields": [
+                            {
+                                "key": "field_6339ad9c3c80f",
+                                "label": "Link Type",
+                                "name": "type",
+                                "type": "radio",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "show_in_graphql": 1,
+                                "choices": {
+                                    "custom": "Custom",
+                                    "reference": "Link to another document"
+                                },
+                                "default_value": "reference",
+                                "return_format": "value",
+                                "allow_null": 0,
+                                "other_choice": 0,
+                                "layout": "horizontal",
+                                "save_other_choice": 0
+                            },
+                            {
+                                "key": "field_6339adf13c811",
+                                "label": "URL",
+                                "name": "url",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_6339ad9c3c80f",
+                                            "operator": "==",
+                                            "value": "custom"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "show_in_graphql": 1,
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": ""
+                            },
+                            {
+                                "key": "field_6339ae063c812",
+                                "label": "Document to link to",
+                                "name": "reference",
+                                "type": "post_object",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_6339ad9c3c80f",
+                                            "operator": "==",
+                                            "value": "reference"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "show_in_graphql": 1,
+                                "post_type": [
+                                    "post",
+                                    "page"
+                                ],
+                                "taxonomy": "",
+                                "return_format": "object",
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "ui": 1
+                            }
+                        ],
+                        "parent_repeater": "field_6339ad3a3c80c"
+                    },
+                    {
+                        "key": "field_6339afe7d3513",
+                        "label": "Sub Menu",
+                        "name": "subMenu",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": [
+                            [
+                                {
+                                    "field": "field_6339ad673c80d",
+                                    "operator": "==",
+                                    "value": "subMenu"
+                                }
+                            ]
+                        ],
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "show_in_graphql": 1,
+                        "layout": "block",
+                        "pagination": 0,
+                        "min": 1,
+                        "max": 0,
+                        "collapsed": "",
+                        "button_label": "Add Row",
+                        "rows_per_page": 20,
+                        "sub_fields": [
+                            {
+                                "key": "field_6339b059f09b3",
+                                "label": "Label",
+                                "name": "label",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "show_in_graphql": 1,
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_6339afe7d3513"
+                            },
+                            {
+                                "key": "field_6339b059f09b2",
+                                "label": "Link Type",
+                                "name": "type",
+                                "type": "radio",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "show_in_graphql": 1,
+                                "choices": {
+                                    "custom": "Custom",
+                                    "reference": "Link to another document"
+                                },
+                                "default_value": "reference",
+                                "return_format": "value",
+                                "allow_null": 0,
+                                "other_choice": 0,
+                                "layout": "horizontal",
+                                "save_other_choice": 0,
+                                "parent_repeater": "field_6339afe7d3513"
+                            },
+                            {
+                                "key": "field_6339b059f09b4",
+                                "label": "URL",
+                                "name": "url",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_6339b059f09b2",
+                                            "operator": "==",
+                                            "value": "custom"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "show_in_graphql": 1,
+                                "default_value": "",
+                                "maxlength": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "parent_repeater": "field_6339afe7d3513"
+                            },
+                            {
+                                "key": "field_6339b059f09b5",
+                                "label": "Document to link to",
+                                "name": "reference",
+                                "type": "post_object",
+                                "instructions": "",
+                                "required": 1,
+                                "conditional_logic": [
+                                    [
+                                        {
+                                            "field": "field_6339b059f09b2",
+                                            "operator": "==",
+                                            "value": "reference"
+                                        }
+                                    ]
+                                ],
+                                "wrapper": {
+                                    "width": "",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "show_in_graphql": 1,
+                                "post_type": [
+                                    "post",
+                                    "page"
+                                ],
+                                "taxonomy": "",
+                                "return_format": "object",
+                                "multiple": 0,
+                                "allow_null": 0,
+                                "ui": 1,
+                                "parent_repeater": "field_6339afe7d3513"
+                            }
+                        ],
+                        "parent_repeater": "field_6339ad3a3c80c"
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "options_page",
+                    "operator": "==",
+                    "value": "acf-options-header"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "show_in_graphql": 1,
+        "graphql_field_name": "header",
+        "map_graphql_types_from_location_rules": 0,
+        "graphql_types": ""
+    },
+    {
+        "key": "group_6337058d945ba",
+        "title": "Pages and Posts",
+        "fields": [
+            {
+                "key": "field_6337058dc2064",
+                "label": "Hero Type",
+                "name": "hero_type",
+                "type": "select",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "show_in_graphql": 1,
+                "choices": {
+                    "basic": "Basic",
+                    "fullscreen": "Fullscreen"
+                },
+                "default_value": "basic",
+                "return_format": "value",
+                "multiple": 0,
+                "allow_null": 0,
+                "ui": 0,
+                "ajax": 0,
+                "placeholder": ""
+            },
+            {
+                "key": "field_633708fb84389",
+                "label": "Content",
+                "name": "content",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "show_in_graphql": 1,
+                "default_value": "",
+                "delay": 0,
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1
+            },
+            {
+                "key": "field_633709078438a",
+                "label": "Background",
+                "name": "background",
+                "type": "image",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_6337058dc2064",
+                            "operator": "==",
+                            "value": "fullscreen"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "show_in_graphql": 1,
+                "return_format": "array",
+                "library": "all",
+                "min_width": "",
+                "min_height": "",
+                "min_size": "",
+                "max_width": "",
+                "max_height": "",
+                "max_size": "",
+                "mime_types": "",
+                "preview_size": "medium"
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "page"
+                }
+            ],
+            [
+                {
+                    "param": "post_type",
+                    "operator": "==",
+                    "value": "post"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "acf_after_title",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": "",
+        "show_in_rest": 0,
+        "show_in_graphql": 1,
+        "graphql_field_name": "acf",
+        "map_graphql_types_from_location_rules": 0,
+        "graphql_types": ""
+    }
+]

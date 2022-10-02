@@ -1,0 +1,74 @@
+{
+  pages {
+    nodes {
+      title
+      content
+      acf {
+        content
+        background {
+          guid
+        }
+      }
+    }
+  }
+  posts {
+    nodes {
+      title
+      content
+      acf {
+        content
+        background {
+          guid
+        }
+      }
+    }
+  }
+  customPosts {
+    nodes {
+      title
+      customPostsACF {
+        customField
+			}
+		}
+  }
+  mediaItems {
+    nodes {
+      guid
+		}
+  }
+  acfOptionsHeader {
+    header {
+      items {
+        type
+        label
+        link {
+          type
+          url
+          reference {
+            ...on Post {
+              title
+            }
+            ...on Page {
+              title
+            }
+          }
+        }
+        submenu {
+          label
+          type
+          url
+          reference {
+            ...on Post {
+              __typename
+              title
+            }
+            ...on Page {
+              __typename
+              title
+            }
+          }
+        }
+      }
+    }
+  }
+}
