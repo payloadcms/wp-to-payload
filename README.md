@@ -1,6 +1,6 @@
 # Migrating from WP to Payload
 
-Its' 2022 but all over Reddit, if someone asks for a headless CMS suggestion, WP is still one of the top comments. The Payload team has built headless WP sites for almost 7 years, and it certainly had its place, but its time is now over. Using it in a headless context is no longer relevant.
+It's 2022 but all over Reddit, if someone asks for a headless CMS suggestion, WP is still one of the top comments. The Payload team has built headless WP sites for almost 7 years, and it certainly had its place, but its time is now over. Using it in a headless context is no longer relevant.
 
 This repo shows why. It includes a WordPress site with a typical ACF usage example as well as how to replicate that exact same functionality in Payload. You can run both projects on your own machine to see the difference in developer experience for yourself.
 
